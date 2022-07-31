@@ -1,0 +1,12 @@
+POST  http://localhost:8080/api/boat-slips
+Content-Type: application/json
+
+{
+    "vesselName": "Smashing",
+    "slipNumber": 2,
+    "vacant": false
+}
+
+###
+
+GET http://localhost:8080/api/boat-slips

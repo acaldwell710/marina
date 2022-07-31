@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const request = require('request');
 const BoatSlip = mongoose.model('boatslips');
 
+
 // GET /boat-slips
 const boatSlipsList = async (req, res) => {
     BoatSlip
@@ -27,14 +28,14 @@ const boatSlipsList = async (req, res) => {
 
 
 //POST /boat-slips
-const boatSlipsAddSlips = async (req, res) => {    
-        BoatSlip
+const boatSlipsAddSlips = async (req, res) => {
+    BoatSlip
         .create({ 
             vesselName: req.body.vesselName,
-            slipNumber: req.body.slipNumber
+            slipNumber: req.body.slipNumber,
+            vacant: req.body.vacant
         }),
-    
-        (err, boatslip) => {
+        (err, post) => {
         if (err) {
             return res
                 .status(409) //conflict - not available
@@ -42,17 +43,17 @@ const boatSlipsAddSlips = async (req, res) => {
         } else {
             return res
                 .status(200) //success
-                .json({"slipNumber": req.params.slipNumber});
+                .json(boatslips);
         }
-            
-    };
+    };     
 };
+
 
 
 // PUT /boat-slips/:slipnumber/vacate **updating to VACANT**
 const boatSlipsUpdate = async (req, res) => {
     BoatSlip
-        .updateOne({ 'slipNumber': req.params.slipNumber }, {
+        .FindOneAndUpdate({ 'slipNumber': req.params.slipNumber }, {
             vacant: req.body.vacant,
         }, {new:true})
         .then(boatslip => {
