@@ -4,6 +4,7 @@ const apiOptions = {
     server: 'http://localhost:8080'
 }
 
+//render the boat slips --front end view
 const renderBoatSlipsList = (req, res, responseBody) => {
     let message = null;
     let pageTitle = process.env.npm_package_description + ' - Slips';
@@ -24,6 +25,7 @@ const renderBoatSlipsList = (req, res, responseBody) => {
     });
 };
 
+//get the boat slips for the front end
 const boatSlipsList = (req, res) => {
     const path = '/api/boat-slips';
     const requestOptions = {

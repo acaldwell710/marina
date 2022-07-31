@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+
+//schema model
 const boatSlipSchema = new mongoose.Schema({
     code: {type: String, required: false, index: true},
     slipNumber: {type: Number, required: false, index: true},

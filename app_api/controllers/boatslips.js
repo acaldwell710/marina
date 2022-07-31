@@ -5,7 +5,7 @@ const request = require('request');
 const BoatSlip = mongoose.model('boatslips');
 
 
-// GET /boat-slips
+// GET /boat-slips -- use to get boatslips
 const boatSlipsList = async (req, res) => {
     BoatSlip
         .find({})
@@ -27,7 +27,7 @@ const boatSlipsList = async (req, res) => {
 };
 
 
-//POST /boat-slips
+//POST /boat-slips --use to post boatslips
 const boatSlipsAddSlips = async (req, res) => {
     BoatSlip
         .create({ 
@@ -49,7 +49,7 @@ const boatSlipsAddSlips = async (req, res) => {
 };
 
 
-
+// --use to update vacancies
 // PUT /boat-slips/:slipnumber/vacate **updating to VACANT**
 const boatSlipsUpdate = async (req, res) => {
     BoatSlip
