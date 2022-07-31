@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Marina Boat Slips</title>  
+</head>
+<body>
+    <div class="slips">
+        <h1>Slips</h1>
+        <p>
+            <ul>
+                {{#each slips}}
+                <li>
+                    <b>Slip Number:</b> {{this.slipNumber}} <b>Vacant:</b> {{this.vacant}} <b>Vessel Name:</b> {{this.vesselName}} 
+                </li>
+                {{/each}}
+            </ul>
+        </p>
+  
+    </div>
+</body>
+</html>
+

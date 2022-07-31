@@ -1,0 +1,20 @@
+{
+    "1": {
+        "code": "BT012022",
+        "slipNumber": 1,
+        "vacant": true,
+        "vesselName": "Maytee"
+    },
+    "2": {
+        "code": "BT022022",
+        "slipNumber": 2,
+        "vacant": true,
+        "vesselName": "Lazy Sundaze"
+    },
+    "3": {
+        "code": "BT032022",
+        "slipNumber": 3,
+        "vacant": true,
+        "vesselName": "Windease"
+    }
+}
